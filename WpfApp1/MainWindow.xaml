@@ -1,0 +1,53 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="400">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Sing in" Width="100" >
+                <StackPanel>
+                    <StackPanel Margin="5" Orientation="Horizontal">
+                        <Label  Content="Name" Width="60"></Label>
+                        <TextBox Name="NameBox" Height="30" Width="250"></TextBox>
+                    </StackPanel>
+                    <StackPanel Margin="5" Orientation="Horizontal">
+                        <Label  Content="Surname" Width="60"></Label>
+                        <TextBox Name="SurnameBox" Height="30" Width="250"></TextBox>
+                    </StackPanel>
+                    <StackPanel x:Name="GStack" Margin="5" Orientation="Horizontal">
+                        <RadioButton Content="Male"></RadioButton>
+                        <RadioButton Content="Female"></RadioButton>
+                    </StackPanel>
+                    <CheckBox Name="CheckBox" Content="Has Step" Margin="5" ></CheckBox>
+                    <StackPanel Margin="5" Orientation="Horizontal">
+                        <ComboBox Name="ComboBox" Width="150" Height="20">
+                            <ComboBoxItem Content="Sheki"></ComboBoxItem><ComboBoxItem Content="Baku"></ComboBoxItem><ComboBoxItem Content="Zaqatala"></ComboBoxItem><ComboBoxItem Content="Agcabedi"></ComboBoxItem><ComboBoxItem Content="Gence"></ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Margin="5" Orientation="Horizontal">
+                        <Button x:Name="ButtonSubmit" Content="Submit" Width="200" Height="40" Background="Blue" Click="ButtonSubmit_Click" ></Button>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Users" Width="100">
+                <Grid>
+                    <ListBox Name="List" Margin="5" Width="180" HorizontalAlignment="Left" BorderBrush="CornflowerBlue" BorderThickness="2"/>
+
+                    <Button x:Name="Remove" HorizontalAlignment="Right" VerticalAlignment="Center" Background="Red" Width="100" Height="50" Content="Remove" Foreground="White" Click="Remove_Click"/>
+                    <Button x:Name="Save" HorizontalAlignment="Right" VerticalAlignment="Top" Background="Blue" Width="100" Height="70" Content="Save" Foreground="White" Click="Save_Click"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                        <Grid>
+                            <TextBox x:Name="LoadBox" Width="100" Height="20" Background="LightGray" MouseEnter="LoadBox_MouseEnter"/>
+                            <Label Name="label" Content="File Name: " HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Gray" MouseEnter="label_MouseEnter" MouseLeave="label_MouseLeave"/>
+                        </Grid>
+                        <Button x:Name="Load" Background="Green" Width="100" Height="70" Content="Load" Foreground="White" Click='Load_Click' MouseLeave="Load_MouseLeave"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
